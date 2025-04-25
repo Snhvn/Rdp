@@ -35,7 +35,7 @@ class CRDSetup:
 
     @staticmethod
     def installDesktopEnvironment():
-        os.system("')
+        os.system("")
         os.system("apt install --assume-yes xfce4 desktop-base xfce4-terminal")
         os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'")
         os.system("apt remove --assume-yes gnome-terminal")
@@ -91,31 +91,26 @@ X-GNOME-Autostart-enabled=true""".format(link)
             os.system(f"chmod +x /home/{user}/.config/autostart/colab.desktop")
             os.system(f"chown {user}:{user} /home/{user}/.config")
             
-        os.system(f"adduser {user} chrome-remote-desktop")
-        command = f"{CRD_SSH_Code} --pin={Pin}"
-        os.system(f"su - {user} -c '{command}'")
-        os.system("service chrome-remote-desktop start")
         
         print("..........................................................") 
-        print(".....Brought By The Disala................................") 
+        print(".....By SNIPAVN................................") 
         print("..........................................................") 
-        print("......#####...######...####....####...##.......####.......") 
-        print("......##..##....##....##......##..##..##......##..##......")  
-        print("......##..##....##.....####...######..##......######......") 
-        print("......##..##....##........##..##..##..##......##..##......") 
-        print("......#####...######...####...##..##..######..##..##......") 
+        print("........#####...######...##....#######........####.......") 
+        print("......##........##...##..##..  ##....##......##..##......")  
+        print("..........##....##...##..##....##.##.##.....###..###......") 
+        print("..........##....##...##.##.....##...........##....##......") 
+        print("......#####.....##...####......##..........###....##......") 
         print("..........................................................") 
-        print("..Youtube Video Tutorial - https://youtu.be/xqpCQCJXKxU ..") 
+        print("..Discord - https://dsc.gg/servertipacvn ..") 
         print("..........................................................") 
-        print("Log in PIN : 123456") 
-        print("User Name : snipavn") 
+        print("User Name : snipavn")
         print("User Pass : @Loi1234VPS") 
         while True:
             pass
 
 try:
-    if CRD_SSH_Code == "":
-        print("Please enter authcode from the given link")
+    if NGROK_TOKEN == "":
+        print("Please enter token from the given code")
     elif len(str(Pin)) < 6:
         print("Enter a pin more or equal to 6 digits")
     else:
