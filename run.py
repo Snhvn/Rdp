@@ -35,7 +35,7 @@ class CRDSetup:
 
     @staticmethod
     def installDesktopEnvironment():
-        os.system("export DEBIAN_FRONTEND=noninteractive")
+        os.system("')
         os.system("apt install --assume-yes xfce4 desktop-base xfce4-terminal")
         os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'")
         os.system("apt remove --assume-yes gnome-terminal")
