@@ -2,7 +2,7 @@ import os
 import subprocess
 import shutil
 
-CRD_SSH_Code = input("Google CRD SSH Code :")
+NGROK_TOKEN = input("Please Enter your token ngrok:")
 username = "snipavn" #@param {type:"string"}
 password = "@Loi1234VPS" #@param {type:"string"}
 os.system(f"useradd -m {username}")
@@ -26,10 +26,12 @@ class CRDSetup:
 
     @staticmethod
     def installCRD():
-        subprocess.run(['wget', 'https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb'])
-        subprocess.run(['dpkg', '--install', 'chrome-remote-desktop_current_amd64.deb'])
-        subprocess.run(['apt', 'install', '--assume-yes', '--fix-broken'])
-        print("Chrome Remoted Desktop Installed !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        subprocess.run(['wget', 'https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz'])
+        subprocess.run(['tar', '-xf', 'ngrok-v3-stable-linux-amd64.tgz'])
+        subprocess.run(['rm', '-rf', 'ngrok-v3-stable-linux-amd64.tgz'])
+        subprocess.run(['./ngrok', 'config add-authtoken', NGROK_TOKEN ])
+        subprocess.run(['./ngrok', 'tcp', '3389', '&>/dev/null'])
+        print("Ngrok Installed and Start!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     @staticmethod
     def installDesktopEnvironment():
