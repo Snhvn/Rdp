@@ -3,8 +3,8 @@ import subprocess
 import shutil
 
 CRD_SSH_Code = input("Google CRD SSH Code :")
-username = "user" #@param {type:"string"}
-password = "root" #@param {type:"string"}
+username = "snipavn" #@param {type:"string"}
+password = "@Loi1234VPS" #@param {type:"string"}
 os.system(f"useradd -m {username}")
 os.system(f"adduser {username} sudo")
 os.system(f"echo '{username}:{password}' | sudo chpasswd")
@@ -57,7 +57,7 @@ class CRDSetup:
 
     @staticmethod
     def changewall():
-        os.system(f"curl -s -L -k -o xfce-verticals.png https://gitlab.com/chamod12/changewallpaper-win10/-/raw/main/CachedImage_1024_768_POS4.jpg")
+        os.system(f"curl -s -L -k -o xfce-verticals.png https://github.com/Snhvn/Rdp/raw/refs/heads/main/novaskin-wallpaper-cartoonish.jpg")
         current_directory = os.getcwd()
         custom_wallpaper_path = os.path.join(current_directory, "xfce-verticals.png")
         destination_path = '/usr/share/backgrounds/xfce/'
@@ -74,7 +74,7 @@ class CRDSetup:
     def finish(user):
         if Autostart:
             os.makedirs(f"/home/{user}/.config/autostart", exist_ok=True)
-            link = "www.youtube.com/@The_Disala"
+            link = "www.youtube.com/@snipavn205"
             colab_autostart = """[Desktop Entry]
             print("Finalizing !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
@@ -106,8 +106,8 @@ X-GNOME-Autostart-enabled=true""".format(link)
         print("..Youtube Video Tutorial - https://youtu.be/xqpCQCJXKxU ..") 
         print("..........................................................") 
         print("Log in PIN : 123456") 
-        print("User Name : user") 
-        print("User Pass : root") 
+        print("User Name : snipavn") 
+        print("User Pass : @Loi1234VPS") 
         while True:
             pass
 
